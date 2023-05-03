@@ -11,7 +11,9 @@
   https://www.arduino.cc/en/Main/Products
 
   Created by Carlos Romle at 3/04/2023.
+
   This example code is in the public domain.
+
   https://www.arduino.cc/en/Tutorial/BuiltInExamples/
 */
 
@@ -20,16 +22,16 @@
  * 1) Ajuste as permissões do disppositivo no Linux
       curl https://raw.githubusercontent.com/micronucleus/micronucleus/master/commandline/49-micronucleus.rules | sudo tee /etc/udev/rules.d/49-micronucleus.rules
  * 2) Configurar a Arduino IDE
- * 3.1) File | Preferences
+ * 2.1) File | Preferences
         Inclua as URLs (abaixo) no campo: Additional boards manager
         http://digistump.com/package_digistump_index.json
         https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json
         http://drazzy.com/package_drazzy.com_index.json
-   3.2) Tools | Board | Board manager
+   2.2) Tools | Board | Board manager
         Pesquie por ATTinycore
         Instale
-   3.3) Tools | Board | ATtinyCore -> ATTiny88 (Micronucleus, MH-ET t88 w/16MHz CLOCK)
-   3.4) Tools | Programmer -> USBtinyISP (ATtinyCore) FAST, for parts running >= 2MHz
+   2.3) Tools | Board | ATtinyCore -> ATTiny88 (Micronucleus, MH-ET t88 w/16MHz CLOCK)
+   2.4) Tools | Programmer -> USBtinyISP (ATtinyCore) FAST, for parts running >= 2MHz
  */
 #define LED_EXTERNO 3
 #define DIT         100
