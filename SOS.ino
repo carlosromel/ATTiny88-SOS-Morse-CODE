@@ -18,7 +18,7 @@
 */
 
 /**
- * 0) Usar a Arduino IDE 2.0.4
+ * 0) Usar a Arduino IDE 2.1.0
  * 1) Ajuste as permissões do disppositivo no Linux
       curl https://raw.githubusercontent.com/micronucleus/micronucleus/master/commandline/49-micronucleus.rules | sudo tee /etc/udev/rules.d/49-micronucleus.rules
  * 2) Configurar a Arduino IDE
@@ -33,8 +33,17 @@
    2.3) Tools | Board | ATtinyCore -> ATTiny88 (Micronucleus, MH-ET t88 w/16MHz CLOCK)
    2.4) Tools | Programmer -> USBtinyISP (ATtinyCore) FAST, for parts running >= 2MHz
  */
+
+/*
+ * Cálculo do tempo:
+ * Emitir cinco códigos PARIS em um minuto.
+ *
+ * 60s / 5 vezes  = 12s (por código)
+ * 12s / 5 letras = 2,4s (por letra)
+ * 2,4s =  2400 millisegundos
+ */
 #define LED_EXTERNO 3
-#define DIT         100
+#define DIT         200
 #define DAH         (DIT * 3)
 
 // the setup function runs once when you press reset or power the board
@@ -57,10 +66,11 @@ void fast(int pin, int count) { blink(pin, DAH, count); }
 
 // the loop function runs over and over again forever
 void loop() {
+    delay(DAH);
     slow(LED_EXTERNO, 3);
-    delay(100);
+    delay(DAH);
     fast(LED_EXTERNO, 3);
-    delay(100);
+    delay(DAH);
     slow(LED_EXTERNO, 3);
-    delay(2000);
+    delay(DAH);
 }
