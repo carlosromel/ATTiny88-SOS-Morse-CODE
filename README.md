@@ -6,3 +6,6 @@ https://pt.aliexpress.com/item/1005004669896807.html
 
 Referência de configuração do ATtiny Core:
 https://forum.arduino.cc/t/attinycore/599420
+
+Configuração da placa (do Arduino IDE):
+http://drazzy.com/package_drazzy.com_index.json
